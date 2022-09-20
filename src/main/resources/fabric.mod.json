@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "clearhitboxes",
+  "version": "${version}",
+
+  "name": "ClearHitboxes",
+  "description": "ClearHitboxes adds Customisation to Debug Hitboxes (F3+B).\nPlease note; this mod is designed for aesthetic purposes only.",
+  "authors": [
+    "Splzh"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Splzh",
+    "sources": "https://github.com/Splzh",
+    "issues": ""
+  },
+
+  "license": "MIT",
+  "icon": "assets/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "splash.ClearHitboxes"
+    ],
+    "modmenu": [
+      "splash.config.MenuIntegration"
+    ]
+  },
+  "mixins": [
+    "splash.mixins.json"
+  ],
+  "depends": {
+    "fabric-key-binding-api-v1": "*",
+    "fabricloader": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
