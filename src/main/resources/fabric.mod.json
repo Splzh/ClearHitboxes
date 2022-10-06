@@ -13,11 +13,9 @@
     "sources": "https://github.com/Splzh",
     "issues": ""
   },
-
   "license": "MIT",
   "icon": "assets/icon.png",
-
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "client": [
       "splash.ClearHitboxes"
@@ -30,9 +28,9 @@
     "splash.mixins.json"
   ],
   "depends": {
-    "fabric-key-binding-api-v1": "*",
-    "fabricloader": "*",
-    "minecraft": "~1.19",
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.18.x",
     "java": ">=17"
   }
 }
