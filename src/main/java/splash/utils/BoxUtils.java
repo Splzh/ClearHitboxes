@@ -16,8 +16,8 @@ public class BoxUtils {
     }
     public static void drawBoxThin(MatrixStack matrices, double x1, double y1, double z1, double x2, double y2, double z2, float red, float green, float blue, float alpha, float red2, float green2, float blue2, float lineWidth)
     {
-        Matrix4f matrix4f = matrices.peek().getPositionMatrix();
-        Matrix3f matrix3f = matrices.peek().getNormalMatrix();
+        Matrix4f matrix4f = matrices.peek().getModel().copy();//.getPositionMatrix();
+        Matrix3f matrix3f = matrices.peek().getNormal();//.getNormalMatrix();
         float f = (float)x1;
         float g = (float)y1;
         float h = (float)z1;
@@ -72,8 +72,8 @@ public class BoxUtils {
     }
 
     public static void drawBox(MatrixStack matrices, VertexConsumer buffer, double x1, double y1, double z1, double x2, double y2, double z2, float red, float green, float blue, float alpha, float red2, float green2, float blue2, float lineWidth) {
-        Matrix4f matrix4f = matrices.peek().getPositionMatrix();
-        Matrix3f matrix3f = matrices.peek().getNormalMatrix();
+        Matrix4f matrix4f = matrices.peek().getModel().copy();//.getPositionMatrix();
+        Matrix3f matrix3f = matrices.peek().getNormal();//.getNormalMatrix();
         float f = (float)x1;
         float g = (float)y1;
         float h = (float)z1;
