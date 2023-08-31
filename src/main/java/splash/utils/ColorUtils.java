@@ -1,7 +1,6 @@
 package splash.utils;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import splash.config.Config;
+import splash.config.ClearHitboxesConfig;
 
 import java.awt.*;
 
@@ -17,13 +16,12 @@ public class ColorUtils {
         float red   = (float) ((Math.sin(pos             ) * rRange) + rMid);
         float green = (float) ((Math.sin(pos + offSet    ) * gRange) + gMid);
         float blue  = (float) ((Math.sin(pos + offSet * 2) * bRange) + bMid);
-        return new Color((int) red, (int) green, (int) blue, 255);
+        return new Color((int) (red), (int) (green), (int) (blue), 255);
     }
     public static int rainbow(int delay) {
-        Config config = AutoConfig.getConfigHolder(Config.class).getConfig();
-        double rainbowState = Math.ceil((System.currentTimeMillis() + delay) / config.gradientSpeed);
+        double rainbowState = Math.ceil((System.currentTimeMillis() + delay) * ClearHitboxesConfig.gradientSpeed/4);
         rainbowState %= 360;
-        return Color.getHSBColor((float) (rainbowState / 360.0f), config.hitboxRGBB, config.hitboxRGBB).getRGB();
+        return Color.getHSBColor((float) (rainbowState / 360.0f), (float) ClearHitboxesConfig.rgbIntensity, (float) ClearHitboxesConfig.rgbIntensity).getRGB();
 
     }
 }
